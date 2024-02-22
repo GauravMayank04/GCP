@@ -32,7 +32,78 @@ list_of_vms = [
     zone                 = "asia-south1-a",
     svc_account_id       = "sa-gce-jumphost-stg-forbes@prj-stg-svc-forbesca.iam.gserviceaccount.com"
     additional_disks     = []
-  }
+  },
+  {
+    svc_project_id = "prj-stg-svc-forbesca",
+    instance_name = "gce-stg-forbes-as1-solr-01",
+    machine_type  = "e2-standard-2",
+    auto_delete   = "true"
+    tags          = ["ssh-iap","ssh-onprem"],
+    encryption    = []
+    labels = {
+      "billing" : "news18-forbes"
+      "environment" : "stg"
+      "functional-name" : "stg-forbes-solr"
+    },
+    can_ip_forward      = false,
+    deletion_protection = true
+    metadata = {
+      enable-oslogin = "true"
+      block-project-ssh-keys = "true"
+    }
+    network_interface = [
+      {
+        nic_subnetwork         = "sb-stg-as1-forbes-app",
+        nic_subnetwork_project = "prj-stg-host-forbesca",
+        nic_subnetwork_region  = "asia-south1",
+        nic_access_config      = []
+      }
+    ]
+    source_image = "projects/prj-trusted-images36/global/images/production-news18-ubuntu-baseimage-vm"
+    source_image_project = "prj-trusted-images36"
+    boot_disk_type       = "pd-standard",
+    disk_labels          = []
+    boot_size            = 50,
+    zone                 = "asia-south1-a",
+    svc_account_id       = "sa-gce-solr-stg-forbes@prj-stg-svc-forbesca.iam.gserviceaccount.com"
+    additional_disks     = []
+  },
+  {
+    svc_project_id = "prj-stg-svc-forbesca",
+    instance_name = "gce-stg-forbes-as1-solr-02",
+    machine_type  = "e2-standard-2",
+    auto_delete   = "true"
+    tags          = ["ssh-iap","ssh-onprem"],
+    encryption    = []
+    labels = {
+      "billing" : "news18-forbes"
+      "environment" : "stg"
+      "functional-name" : "stg-forbes-solr"
+    },
+    can_ip_forward      = false,
+    deletion_protection = true
+    metadata = {
+      enable-oslogin = "true"
+      block-project-ssh-keys = "true"
+    }
+    network_interface = [
+      {
+        nic_subnetwork         = "sb-stg-as1-forbes-app",
+        nic_subnetwork_project = "prj-stg-host-forbesca",
+        nic_subnetwork_region  = "asia-south1",
+        nic_access_config      = []
+      }
+    ]
+    source_image = "projects/prj-trusted-images36/global/images/production-news18-ubuntu-baseimage-vm"
+    source_image_project = "prj-trusted-images36"
+    boot_disk_type       = "pd-standard",
+    disk_labels          = []
+    boot_size            = 50,
+    zone                 = "asia-south1-b",
+    svc_account_id       = "sa-gce-solr-stg-forbes@prj-stg-svc-forbesca.iam.gserviceaccount.com"
+    additional_disks     = []
+  },
+
 ]
 
 

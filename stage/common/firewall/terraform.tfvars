@@ -107,4 +107,30 @@ fw-stg-i-a-ssh-iap = {
         }]
     }]
   },
+
+  #firewall for solr cluster
+  fw-stg-i-a-solr-cluster = {
+    network_name    = "projects/prj-stg-host-forbesca/global/networks/vpc-stg-shared-host-forbes"
+    host_project_id = "prj-stg-host-forbesca"
+    rules = [
+      {
+        name                    = "fw-stg-i-a-solr-cluster"
+        priority                = 1000
+        description             = "allow acccess to solr vm cluster - terraform"
+        direction               = "INGRESS"
+        ranges                  = []
+        source_tags             = null
+        source_service_accounts = ["sa-gce-solr-stg-forbes@prj-stg-svc-forbesca.iam.gserviceaccount.com"]
+        target_tags             = null
+        target_service_accounts = ["sa-gce-solr-stg-forbes@prj-stg-svc-forbesca.iam.gserviceaccount.com"]
+        log_config = {
+          metadata = "EXCLUDE_ALL_METADATA"
+        }
+        deny = []
+        allow = [{
+          protocol = "tcp"
+          ports    = ["22","8983"]
+        }]
+    }]
+  },
 }
