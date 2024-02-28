@@ -4,7 +4,7 @@
 
 module "gce-lb-http" {
   for_each              = { for x in var.list_of_glb : x.name => x }
-  source                = "../../../modules/global-lb"
+  source                = "../../modules/global-lb"
   project               = each.value.project
   name                  = each.value.name
   frontend_name         = each.value.frontend_name
@@ -14,9 +14,10 @@ module "gce-lb-http" {
   host_rule             = each.value.host_rule
   #firewall_networks     = each.value.host_rule
   # firewall_projects     = each.value.firewall_projects
-  certificate_map = each.value.certificate_map
   create_health_check_firewall = each.value.create_health_check_firewall
   backends                     = each.value.backends
-  ssl              = each.value.ssl
-  ssl_certificates = each.value.ssl_certificates
+  certificate_map              = each.value.certificate_map
+  ssl                          = each.value.ssl
+  ssl_policy                   = each.value.ssl_policy
+  ssl_certificates             = each.value.ssl_certificates
 }

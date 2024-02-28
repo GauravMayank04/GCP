@@ -15,6 +15,7 @@ variable "list_of_glb" {
     # firewall_projects = list(string)
     create_health_check_firewall = bool
     ssl                          = bool
+    ssl_policy                   = string
     ssl_certificates             = list(string)
     host_rule = list(object({
       path_matcher = string

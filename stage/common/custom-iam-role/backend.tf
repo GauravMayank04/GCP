@@ -2,6 +2,6 @@
 terraform {
   backend "gcs" {
     bucket = "bkt-common-srv-terraform-forbes-infra-state-as1"
-    prefix = "terraform/forbes-stg/common/global-lb/state"
+    prefix = "terraform/forbes-stg/common/custom-iam-role/state"
   }
 }
