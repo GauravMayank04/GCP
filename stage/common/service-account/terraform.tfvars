@@ -14,7 +14,28 @@ service_accounts_list = [
     names         = ["sa-gce-solr-stg-forbes"]
     project_roles = ["prj-stg-svc-forbesca=>roles/logging.logWriter", "prj-stg-svc-forbesca=>roles/monitoring.metricWriter"]
   },
-  
+  {
+    project_id    = "prj-stg-svc-forbesca"
+    prefix        = ""
+    display_name  = "sa-gce-stg-forbes-frontend"
+    names         = ["sa-gce-stg-forbes-frontend"]
+    project_roles = ["prj-stg-svc-forbesca=>roles/logging.logWriter", "prj-stg-svc-forbesca=>roles/monitoring.metricWriter"]
+  },
+  {
+    project_id    = "prj-stg-svc-forbesca"
+    prefix        = ""
+    display_name  = "sa-gce-stg-forbes-cms"
+    names         = ["sa-gce-stg-forbes-cms"]
+    project_roles = ["prj-stg-svc-forbesca=>roles/logging.logWriter", "prj-stg-svc-forbesca=>roles/monitoring.metricWriter"]
+  },
+{
+    project_id    = "prj-stg-svc-forbesca"
+    prefix        = ""
+    display_name  = "sa-stg-jenkins-app" 
+    names         = ["sa-stg-jenkins-app"]
+    project_roles = ["prj-stg-svc-forbesca=>roles/logging.logWriter", "prj-stg-svc-forbesca=>roles/monitoring.metricWriter"]
+  },
+
 ]
 
 

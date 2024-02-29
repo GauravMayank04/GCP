@@ -46,8 +46,7 @@ resource "google_compute_global_forwarding_rule" "https" {
   provider              = google-beta
   project               = var.project
   count                 = var.ssl || var.certificate_map != null ? 1 : 0
-  //name                  = "${var.name}-https"
-  name = var.frontend_name
+  name                  = "${var.name}-https"
   target                = google_compute_target_https_proxy.default[0].self_link
   ip_address            = local.address
   port_range            = "443"
@@ -304,9 +303,9 @@ resource "google_compute_backend_service" "default" {
     google_compute_health_check.default
   ]
 
-  # lifecycle {
-  #   ignore_changes = [backend]
-  # }
+  lifecycle {
+    ignore_changes = [backend]
+  }
 }
 
 resource "google_compute_health_check" "default" {

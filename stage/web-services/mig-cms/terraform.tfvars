@@ -5,7 +5,7 @@
 list_of_instance_template = [
   {
     region      = "asia-south1"
-    name_prefix = "gce-it-stg-frontend-as1"
+    name_prefix = "gce-it-stg-cms-as1"
     # target_size          = "1"
     project_id          = "prj-stg-svc-forbesca"                                                                    //service project id
     network             = "projects/prj-stg-host-forbesca/global/networks/vpc-stg-shared-host-forbes"               //host project vpc
@@ -13,19 +13,19 @@ list_of_instance_template = [
     subnetwork_project  = "	prj-stg-host-forbesca"                                                                   //host project"    //host project
     additional_networks = []
     machine_type        = "n2-standard-4"
-    source_image        = "projects/prj-trusted-images36/global/images/gce-stg-forbes-frontend-image" //should be changed to trusted image - only source image is fine
+    source_image        = "projects/prj-trusted-images36/global/images/gce-stg-forbes-cms-image" //should be changed to trusted image - only source image is fine
     source_image_project = "prj-trusted-images36"
     disk_size_gb         = "1200"
     tags                 = ["ssh-iap", "ssh-onprem", "http-onprem","allow-hc", "ssh-app"]
     labels = {
       "billing" : "news18-forbes"
       "environment" : "stage"
-      "functional-name" : "stg-mig-frontend"
+      "functional-name" : "stg-mig-cms"
     }
 
     can_ip_forward = false
     service_account = {
-      email  = "sa-gce-stg-forbes-frontend@prj-stg-svc-forbesca.iam.gserviceaccount.com"
+      email  = "sa-gce-stg-forbes-cms@prj-stg-svc-forbesca.iam.gserviceaccount.com"
       scopes = ["cloud-platform"]
     }
     metadata = {
@@ -42,14 +42,14 @@ list_of_instance_template = [
       enable_integrity_monitoring = false
     }
 
-    hostname   = "stg-forbes-as1-frontend"
-    mig_name   = "stg-forbes-as1-frontend-mig"
+    hostname   = "stg-forbes-as1-cms"
+    mig_name   = "stg-forbes-as1-cms-mig"
     //region     = "asia-south1"
     //project_id = "prj-stg-svc-forbesca"                                                      //service project id
     //network    = "projects/prj-stg-host-forbesca/global/networks/vpc-stg-shared-host-forbes" //host project vpc
     //subnetwork = "projects/prj-stg-host-forbesca/regions/asia-south1/subnetworks/sb-stg-as1-forbes-app"
     #Autoscaling policy
-    autoscaler_name     = "autoscale-stage-frontend-mig"
+    autoscaler_name     = "autoscale-stage-cms-mig"
     autoscaling_enabled = true
     max_replicas        = "2"
     min_replicas        = "2"
@@ -68,7 +68,7 @@ list_of_instance_template = [
         port = 80
       }
     ]
-    health_check_name = "hc-stage-frontend-mig"
+    health_check_name = "hc-stage-cms-mig"
     health_check = {
       type                = "tcp"
       initial_delay_sec   = 300
