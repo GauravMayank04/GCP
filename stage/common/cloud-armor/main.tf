@@ -2,9 +2,9 @@
 ## cloud-armor
 # *****************************************************
 
-module "cloud_armor" {
+module "cloud-armor" {
   for_each = { for x in var.list_of_cloud_armor : x.name => x }
-  source                               = "../../../modules/cloud-armor"
+  source                               = "../../modules/cloud-armor"
   project_id                           = each.value.project_id
   name                                 = each.value.name
   description                          = each.value.description
