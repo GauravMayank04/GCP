@@ -44,7 +44,7 @@ stages {
   build job: "forbes-stg/common/cloud-storage-job", wait: false
   }
   }
-
+/*
   stage('stage/common/service-account') {
   when { changeset "stage/common/service-account/*" }
   steps {
@@ -102,9 +102,9 @@ stages {
   build job: "forbes-stg/common/ssl-policy-job", wait: false
   }
   }
-
+*/
   /*************** Jenkins config for Stage - Data-services folder **************/
-
+/*
   stage('stage/data-services/mysql') {
   when { changeset "stage/data-services/mysql/*" }
   steps {
@@ -118,10 +118,10 @@ stages {
   build job: "forbes-stg/data-services/redis-job", wait: false
   }
   }
-
+*/
 /*************** Jenkins config for Stage - Web-services folder **************/
 
-
+/*
   stage('stage/web-services/mig-cms') {
   when { changeset "stage/web-services/mig-cms/*" }
   steps {
@@ -135,6 +135,7 @@ stages {
   build job: "forbes-stg/web-services/mig-frontend-job", wait: false
   }
   }
+*/
 
 }
 }
