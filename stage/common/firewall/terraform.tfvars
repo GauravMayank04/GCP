@@ -51,7 +51,7 @@ fw-stg-i-a-onprem-gcp-http = {
         deny = []
         allow = [{
           protocol = "tcp"
-          ports    = ["80"]
+          ports    = ["80","8080"]
         }]
     }] 
   },
