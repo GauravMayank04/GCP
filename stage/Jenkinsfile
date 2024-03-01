@@ -44,14 +44,14 @@ stages {
   build job: "forbes-stg/common/cloud-storage-job", wait: false
   }
   }
-/*
+
   stage('stage/common/service-account') {
   when { changeset "stage/common/service-account/*" }
   steps {
   build job: "forbes-stg/common/service-account-job", wait: false
   }
   }
-  
+ /* 
   stage('stage/common/cloud-armor') {
   when { changeset "stage/common/cloud-armor/*" }
   steps {
