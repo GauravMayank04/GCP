@@ -4,8 +4,8 @@
 
 list_of_cloud_armor = [
   {
-    project_id                           = "prj-prod-svc-news18-engb4"
-    name                                 = "prod-cloudarmor-eng-glb-news18"
+    project_id                           = "prj-stg-svc-forbesca"
+    name                                 = "prod-cloudarmor-node-glb-forbes"
     description                          = "Security Policy"
     default_rule_action                  = "deny(403)"
     type                                 = "CLOUD_ARMOR"
@@ -14,14 +14,14 @@ list_of_cloud_armor = [
 
     security_rules = {
 
-      # "allow_ip_from_this_range_01" = {
-      # action        = "allow"
-      #  priority      = 100
-      # description   = "allow ip only from"
-      # src_ip_ranges = ["*"]
-      # preview       = false
-      # }
-        "allow_ip_from_this_range_02" = {
+       "allow_ip_from_this_range_01" = {
+       action        = "allow"
+        priority      = 100
+       description   = "allow ip only from"
+       src_ip_ranges = ["*"]
+       preview       = false
+       }
+        /*"allow_ip_from_this_range_02" = {
         action        = "allow"
         priority      = 11
         description   = "allow ip only from"
@@ -124,6 +124,7 @@ list_of_cloud_armor = [
       },
 
 
-    }
-  },
+    }*/
+  }
+  }
 ]
