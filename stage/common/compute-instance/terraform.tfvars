@@ -38,7 +38,7 @@ list_of_vms = [
     instance_name = "gce-stg-forbes-as1-solr-01",
     machine_type  = "e2-standard-2",
     auto_delete   = "true"
-    tags          = ["ssh-iap","ssh-onprem"],
+    tags          = ["ssh-iap","ssh-onprem","http-onprem"],
     encryption    = []
     labels = {
       "billing" : "news18-forbes"
@@ -73,7 +73,7 @@ list_of_vms = [
     instance_name = "gce-stg-forbes-as1-solr-02",
     machine_type  = "e2-standard-2",
     auto_delete   = "true"
-    tags          = ["ssh-iap","ssh-onprem"],
+    tags          = ["ssh-iap","ssh-onprem","http-onprem"],
     encryption    = []
     labels = {
       "billing" : "news18-forbes"
