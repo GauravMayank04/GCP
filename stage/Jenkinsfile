@@ -1,0 +1,140 @@
+pipeline {
+  agent {
+        kubernetes {
+            yaml '''
+apiVersion: v1
+kind: Pod
+spec:
+  containers:
+  - name: jenkins-slave
+    image: asia-south1-docker.pkg.dev/prj-shared-central-cicd36/repo-prj-shared-central-cicd36-uat-as1-01/jenkins-slave-for-infra-cicd:v4
+    resources:
+      requests:
+       memory: "3000Mi"
+       cpu: "2000m"
+      limits: 
+       memory: "4000Mi"
+       cpu: "3000m"
+
+    env:
+    securityContext:
+      privileged: true
+      runAsGroup: 0
+      runAsUser: 0
+  serviceAccountName: "jenkins-sa"
+    
+'''
+            defaultContainer 'jenkins-slave'
+        }
+    }
+    
+stages {
+ stage('git checkout') {
+   steps {
+    git branch: 'main', credentialsId: 'gitlab-credentials', url: 'https://gitlab.nw18devops.com/news18-devops/forbes-infra.git'
+   }
+  }
+
+/*************** Jenkins config for Stage - Common folder **************/
+
+
+  stage('stage/common/cloud-storage') {
+  when { changeset "stage/common/cloud-storage/*" }
+  steps {
+  build job: "forbes-stg/common/cloud-storage-job", wait: false
+  }
+  }
+
+  stage('stage/common/service-account') {
+  when { changeset "stage/common/service-account/*" }
+  steps {
+  build job: "forbes-stg/common/service-account-job", wait: false
+  }
+  }
+  
+  stage('stage/common/cloud-armor') {
+  when { changeset "stage/common/cloud-armor/*" }
+  steps {
+  build job: "forbes-stg/common/cloud-armor-job", wait: false
+  }
+  }
+
+
+
+  stage('stage/common/firewall') {
+  when { changeset "stage/common/firewall/*" }
+  steps {
+  build job: "forbes-stg/common/firewall-job", wait: false
+  }
+  }
+
+  stage('stage/common/compute-instance') {
+  when { changeset "stage/common/compute-instance/*" }
+  steps {
+  build job: "forbes-stg/common/compute-instance-job", wait: false
+  }
+  }
+
+  stage('stage/common/global-lb') {
+  when { changeset "stage/common/global-lb/*" }
+  steps {
+  build job: "forbes-stg/common/global-lb-job", wait: false
+  }
+  }
+
+  stage('stage/common/custom-iam-role') {
+  when { changeset "stage/common/custom-iam-role/*" }
+  steps {
+  build job: "forbes-stg/common/custom-iam-role-job", wait: false
+  }
+  }
+  
+   stage('stage/common/secret-manager') {
+  when { changeset "stage/common/secret-manager/*" }
+  steps {
+  build job: "forbes-stg/common/secret-manager-job", wait: false
+  }
+  }
+
+  stage('stage/common/ssl-policy') {
+  when { changeset "stage/common/ssl-policy/*" }
+  steps {
+  build job: "forbes-stg/common/ssl-policy-job", wait: false
+  }
+  }
+
+  /*************** Jenkins config for Stage - Data-services folder **************/
+
+  stage('stage/data-services/mysql') {
+  when { changeset "stage/data-services/mysql/*" }
+  steps {
+  build job: "forbes-stg/data-services/mysql-job", wait: false
+  }
+  }
+
+  stage('stage/data-services/redis') {
+  when { changeset "stage/data-services/redis/*" }
+  steps {
+  build job: "forbes-stg/data-services/redis-job", wait: false
+  }
+  }
+
+/*************** Jenkins config for Stage - Web-services folder **************/
+
+
+  stage('stage/web-services/mig-cms') {
+  when { changeset "stage/web-services/mig-cms/*" }
+  steps {
+  build job: "forbes-stg/web-services/mig-cms-job", wait: false
+  }
+  }
+
+  stage('stage/web-services/mig-frontend') {
+  when { changeset "stage/web-services/mig-frontend/*" }
+  steps {
+  build job: "forbes-stg/web-services/mig-frontend-job", wait: false
+  }
+  }
+
+}
+}
