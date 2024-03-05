@@ -65,14 +65,14 @@ stages {
   build job: "forbes-stg/common/firewall-job", wait: false
   }
   }
-/*
+
   stage('stage/common/compute-instance') {
   when { changeset "stage/common/compute-instance/*" }
   steps {
   build job: "forbes-stg/common/compute-instance-job", wait: false
   }
   }
-
+/*
   stage('stage/common/global-lb') {
   when { changeset "stage/common/global-lb/*" }
   steps {
