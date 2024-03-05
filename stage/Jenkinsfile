@@ -93,14 +93,14 @@ stages {
   build job: "forbes-stg/common/secret-manager-job", wait: false
   }
   }
- /*
+
   stage('stage/common/ssl-policy') {
   when { changeset "stage/common/ssl-policy/*" }
   steps {
   build job: "forbes-stg/common/ssl-policy-job", wait: false
   }
   }
-*/
+
   /*************** Jenkins config for Stage - Data-services folder **************/
 /*
   stage('stage/data-services/mysql') {
