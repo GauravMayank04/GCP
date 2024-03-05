@@ -86,14 +86,14 @@ stages {
   build job: "forbes-stg/common/custom-iam-role-job", wait: false
   }
   }
-  /*
+ 
    stage('stage/common/secret-manager') {
   when { changeset "stage/common/secret-manager/*" }
   steps {
   build job: "forbes-stg/common/secret-manager-job", wait: false
   }
   }
-
+ /*
   stage('stage/common/ssl-policy') {
   when { changeset "stage/common/ssl-policy/*" }
   steps {
