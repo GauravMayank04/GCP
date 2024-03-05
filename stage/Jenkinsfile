@@ -72,14 +72,14 @@ stages {
   build job: "forbes-stg/common/compute-instance-job", wait: false
   }
   }
-/*
+
   stage('stage/common/global-lb') {
   when { changeset "stage/common/global-lb/*" }
   steps {
   build job: "forbes-stg/common/global-lb-job", wait: false
   }
   }
-
+/*
   stage('stage/common/custom-iam-role') {
   when { changeset "stage/common/custom-iam-role/*" }
   steps {
