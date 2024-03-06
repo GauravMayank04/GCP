@@ -102,14 +102,14 @@ stages {
   }
 
   /*************** Jenkins config for Stage - Data-services folder **************/
-/*
+
   stage('stage/data-services/mysql') {
   when { changeset "stage/data-services/mysql/*" }
   steps {
   build job: "forbes-stg/data-services/mysql-job", wait: false
   }
   }
-
+/*
   stage('stage/data-services/redis') {
   when { changeset "stage/data-services/redis/*" }
   steps {
