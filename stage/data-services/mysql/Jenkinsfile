@@ -27,7 +27,6 @@ spec:
     }
 
     stages {
-        
         stage('git checkout') {
             
             steps {
