@@ -47,6 +47,7 @@ spec:
 
         stage('terraform checkov') {
             steps {
+                
                 dir('./stage/data-services/mysql') {
                     script {
                         sh "checkov --version "
