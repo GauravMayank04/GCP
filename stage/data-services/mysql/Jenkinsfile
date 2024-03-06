@@ -7,7 +7,7 @@ kind: Pod
 spec:
   containers:
   - name: jenkins-slave
-    image: asia-south1-docker.pkg.dev/prj-shared-central-cicd36/repo-prj-shared-central-cicd36-uat-as1-01/jenkins-slave-for-infra-cicd:v4
+    image: asia-south1-docker.pkg.dev/prj-shared-central-cicd36/repo-prj-shared-central-cicd36-uat-as1-01/jenkins-slave-for-infra-cicd:v11
     resources:
       requests:
         memory: "3000Mi"
