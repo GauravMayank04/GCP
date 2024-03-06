@@ -30,7 +30,7 @@ spec:
         stage('git checkout') {
             
             steps {
-                git branch: 'main', credentialsId: 'gitlab-credentials', url: https://gitlab.nw18devops.com/news18-devops/forbes-infra.git
+                git branch: 'main', credentialsId: 'gitlab-credentials', url: 'https://gitlab.nw18devops.com/news18-devops/forbes-infra.git'
             }
         }
   
