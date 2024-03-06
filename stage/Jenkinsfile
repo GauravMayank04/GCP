@@ -125,14 +125,13 @@ stages {
   build job: "forbes-stg/web-services/mig-cms-job", wait: false
   }
   }
-/*
+
   stage('stage/web-services/mig-frontend') {
   when { changeset "stage/web-services/mig-frontend/*" }
   steps {
   build job: "forbes-stg/web-services/mig-frontend-job", wait: false
   }
   }
-*/
 
 }
 }
