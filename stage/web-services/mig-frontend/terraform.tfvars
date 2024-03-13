@@ -10,10 +10,10 @@ list_of_instance_template = [
     project_id          = "prj-stg-svc-forbesca"                                                                    //service project id
     network             = "projects/prj-stg-host-forbesca/global/networks/vpc-stg-shared-host-forbes"               //host project vpc
     subnetwork          = "projects/prj-stg-host-forbesca/regions/asia-south1/subnetworks/sb-stg-as1-forbes-app" //host project subnet 
-    subnetwork_project  = "	prj-stg-host-forbesca"                                                                   //host project"    //host project
+    subnetwork_project  = "prj-stg-host-forbesca"                                                                   //host project"    //host project
     additional_networks = []
     machine_type        = "n2-standard-4"
-    source_image        = "projects/prj-trusted-images36/global/images/gce-stg-forbes-frontend-image" //should be changed to trusted image - only source image is fine
+    source_image        = "projects/prj-trusted-images36/global/images/gce-stg-forbes-frontend-image-01" //should be changed to trusted image - only source image is fine
     source_image_project = "prj-trusted-images36"
     disk_size_gb         = "1200"
     tags                 = ["ssh-iap", "ssh-onprem", "http-onprem","allow-hc", "ssh-app"]
@@ -32,7 +32,7 @@ list_of_instance_template = [
       enable-oslogin     = "TRUE"
       enable-oslogin-2fa = "FALSE"
       block-project-ssh-keys = "true"
-      startup-script     = ""
+      startup-script     = "#!/bin/bash\n\nCHECKOUT='git checkout stage'\n\necho \"forbesindia.com\"\n\nsu - forbes -c \"cd /home/forbesindia.com/www && $CHECKOUT && git pull\"\n\n\necho \"subs.forbesindia.com\"\n\nsu - forbes -c \"cd /home/subs.forbesindia.com/www && $CHECKOUT && git pull\"!/bin/bash\n\nCHECKOUT='git checkout stage'\n\necho \"forbesindia.com\"\n\nsu - forbes -c \"cd /home/forbesindia.com/www && $CHECKOUT && git pull\"\n\n\necho \"subs.forbesindia.com\"\n\nsu - forbes -c \"cd /home/subs.forbesindia.com/www && $CHECKOUT && git pull\""
 
     }
     enable_shielded_vm = false  
@@ -44,10 +44,10 @@ list_of_instance_template = [
 
     hostname   = "stg-forbes-as1-frontend"
     mig_name   = "stg-forbes-as1-frontend-mig"
-    //region     = "asia-south1"
-    //project_id = "prj-stg-svc-forbesca"                                                      //service project id
-    //network    = "projects/prj-stg-host-forbesca/global/networks/vpc-stg-shared-host-forbes" //host project vpc
-    //subnetwork = "projects/prj-stg-host-forbesca/regions/asia-south1/subnetworks/sb-stg-as1-forbes-app"
+    region     = "asia-south1"
+    project_id = "prj-stg-svc-forbesca"                                                      //service project id
+    network    = "projects/prj-stg-host-forbesca/global/networks/vpc-stg-shared-host-forbes" //host project vpc
+    subnetwork = "projects/prj-stg-host-forbesca/regions/asia-south1/subnetworks/sb-stg-as1-forbes-app"
     #Autoscaling policy
     autoscaler_name     = "autoscale-stage-frontend-mig"
     autoscaling_enabled = true
