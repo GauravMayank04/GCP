@@ -79,10 +79,11 @@ firewall_rules_list = {
           ports    = ["80", "443"]
         }]
     }]
-  },
+  },*/
   fw-prod-i-a-health-check = {
-    network_name    = "projects/prj-prod-host-cnbctv188f/global/networks/vpc-prod-shared-host-cnbctv18" 
-    host_project_id = "prj-prod-host-cnbctv188f"
+    network_name    = "projects/prj-prod-host-forbes89/global/networks/vpc-prod-shared-host-forbes" 
+    host_project_id = "prj-prod-host-forbes89"
+    
     rules = [
       {
         name                    = "fw-prod-i-a-health-check"
@@ -105,7 +106,7 @@ firewall_rules_list = {
     }]
   },
 
-  # communication between hindi CMS and ETL
+ /* # communication between hindi CMS and ETL
    fw-prod-i-a-hindi-cms-to-etl = {
     network_name    = "projects/prj-prod-host-cnbctv188f/global/networks/vpc-prod-shared-host-cnbctv18" 
     host_project_id = "prj-prod-host-cnbctv188f"
@@ -185,6 +186,32 @@ firewall_rules_list = {
     }]
   }
   */
+
+  fw-prod-i-a-onprem-gcp-solar= {
+    
+    network_name    = "projects/prj-prod-host-forbes89/global/networks/vpc-prod-shared-host-forbes" 
+    host_project_id = "prj-prod-host-forbes89"
+    rules = [
+      {
+        name                    = "fw-prod-i-a-onprem-gcp-solar"
+        priority                = 1000
+        description             = "allow solar access from onprem to gcp vm - terraform"
+        direction               = "INGRESS"
+        ranges                  = ["172.18.0.0/16", "172.28.0.0/16", "172.29.0.0/16"]
+        source_tags             = null
+        source_service_accounts = null
+        target_tags             = ["solar-onprem"]
+        target_service_accounts = null
+        log_config = {
+          metadata = "EXCLUDE_ALL_METADATA"
+        }
+        deny = []
+        allow = [{
+          protocol = "tcp"
+          ports    = ["8080"]
+        }]
+    }]
+  }
 
 }
 
