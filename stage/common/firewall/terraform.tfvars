@@ -133,4 +133,58 @@ fw-stg-i-a-ssh-iap = {
         }]
     }]
   },
+
+  # firewall for cms-mig to solar
+
+fw-stg-i-a-cms-mig-solar = {
+    network_name    = "projects/prj-stg-host-forbesca/global/networks/vpc-stg-shared-host-forbes"
+    host_project_id = "prj-stg-host-forbesca"
+    rules = [
+      {
+        name                    = "fw-stg-i-a-cms-mig-solar"
+        priority                = 1000
+        description             = "allow acccess from cms mig to solar for 8080 port - terraform"
+        direction               = "INGRESS"
+        ranges                  = null
+        source_tags             = null
+        source_service_accounts = ["sa-gce-stg-forbes-cms@prj-stg-svc-forbesca.iam.gserviceaccount.com"]
+        target_tags             = null
+        target_service_accounts = ["sa-gce-solr-stg-forbes@prj-stg-svc-forbesca.iam.gserviceaccount.com"]
+        log_config = {
+          metadata = "EXCLUDE_ALL_METADATA"
+        }
+        deny = []
+        allow = [{
+          protocol = "tcp"
+          ports    = ["80","8080"]
+        }]
+    }] 
+  },
+
+  # firewall for cms-mig to solar
+
+fw-stg-i-a-frontend-mig-solar = {
+    network_name    = "projects/prj-stg-host-forbesca/global/networks/vpc-stg-shared-host-forbes"
+    host_project_id = "prj-stg-host-forbesca"
+    rules = [
+      {
+        name                    = "fw-stg-i-a-frontend-mig-solar"
+        priority                = 1000
+        description             = "allow acccess from frontend mig to solar for 8080 port - terraform"
+        direction               = "INGRESS"
+        ranges                  = null
+        source_tags             = null
+        source_service_accounts = ["sa-gce-stg-forbes-frontend@prj-stg-svc-forbesca.iam.gserviceaccount.com"]
+        target_tags             = null
+        target_service_accounts = ["sa-gce-solr-stg-forbes@prj-stg-svc-forbesca.iam.gserviceaccount.com"]
+        log_config = {
+          metadata = "EXCLUDE_ALL_METADATA"
+        }
+        deny = []
+        allow = [{
+          protocol = "tcp"
+          ports    = ["80","8080"]
+        }]
+    }] 
+  },
 }
