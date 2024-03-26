@@ -4,7 +4,7 @@
 list_of_buckets = [
   {
     project_id               = "prj-stg-svc-forbesca"
-    names                    = ["stg-forbes-01"]
+    names                    = ["forbes-stg-01"]
     prefix                   = "bkt"
     location                 = "asia-south1"
     public_access_prevention = "inherited"
@@ -15,14 +15,14 @@ list_of_buckets = [
       # "functional-name" : "english"
     }
     versioning = {
-      stg-forbes-01 : true,
+      forbes-stg-01 : true,
     }
     bucket_viewers = {}
     folders = {
-      stg-forbes-01 = []
+      forbes-stg-01 = []
 
     }
-    bucket_folder = "bkt-stg-forbes-01"
+    bucket_folder = "bkt-forbes-stg-01"
   },
 ]
 
