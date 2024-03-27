@@ -146,11 +146,11 @@ variable "list_of_instance_template" {
     hostname        = string
     mig_name        = string
     autoscaler_name = string
-   // region          = string
+    //region          = string
    // project_id      = string
     # instance_template    =  string
    // network             = string
-    // subnetwork          = string
+    //subnetwork          = string
     autoscaling_enabled = bool
     max_replicas        = string
     min_replicas        = string
