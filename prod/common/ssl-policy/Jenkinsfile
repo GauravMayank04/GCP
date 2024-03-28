@@ -20,22 +20,24 @@ spec:
       privileged: true
       runAsGroup: 0
       runAsUser: 0
-  serviceAccountName: "jenkins-sa"
+  serviceAccountName: "ksa-cnt-cicd-forbes-prd-infra"
 '''
             defaultContainer 'jenkins-slave'
         }
     }
 
     stages {
+        
         stage('git checkout') {
             steps {
-                git branch: 'main', credentialsId: 'gitlab-credentials', url: 'https://gitlab.nw18devops.com/news18-devops/news18-infra.git'
+                
+                git branch: 'main', credentialsId: 'gitlab-credentials', url: 'https://gitlab.nw18devops.com/news18-devops/forbes-infra.git'
             }
         }
   
         stage('terraform tfsec') {
             steps {
-                dir('./stage/common/ssl-policy') {
+                dir('./prod/common/ssl-policy') {
                     script {
                         sh "tfsec . --no-colour"
                     }
@@ -45,11 +47,11 @@ spec:
 
         stage('terraform checkov') {
             steps {
-                dir('./stage/common/ssl-policy') {
+                dir('./prod/common/ssl-policy') {
                     script {
                         sh "checkov --version "
                         sh "terraform init -no-color && terraform plan -out tf.plan -no-color && terraform show -json tf.plan > ./tf.json "
-                        sh "TERM=dumb checkov -f tf.json --skip-check CKV_GCP_4"
+                        sh "TERM=dumb checkov -f tf.json --skip-check CKV_GCP_4" 
                     }
                 }
             }
@@ -57,7 +59,7 @@ spec:
 
         stage('terraform init') {
             steps {
-                dir('./stage/common/ssl-policy') {
+                dir('./prod/common/ssl-policy') {
                     sh "terraform init -no-color"
                 }
             }
@@ -65,7 +67,7 @@ spec:
 
         stage('terraform plan') {
             steps {
-                dir('./stage/common/ssl-policy') {
+                dir('./prod/common/ssl-policy') {
                     sh "terraform plan -no-color"
                 }
             }
@@ -84,10 +86,12 @@ spec:
                 expression { true }
             }
             steps {
-                dir('./stage/common/ssl-policy') {
+                dir('./prod/common/ssl-policy') {
                     sh 'terraform apply -auto-approve -no-color'
                 }
             }
         }
     }
 }
+
+
