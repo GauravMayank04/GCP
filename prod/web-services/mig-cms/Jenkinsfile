@@ -35,7 +35,7 @@ spec:
   
         stage('terraform tfsec') {
             steps {
-                dir('./stage/web-services/mig-cms') {
+                dir('./prod/web-services/mig-cms') {
                     script {
                         sh "tfsec . --no-colour"
                     }
@@ -46,7 +46,7 @@ spec:
         stage('terraform checkov') {
             
             steps {
-                dir('./stage/web-services/mig-cms') {
+                dir('./prod/web-services/mig-cms') {
                     script {
                         sh "checkov --version "
                         sh "terraform init -no-color && terraform plan -out tf.plan -no-color && terraform show -json tf.plan > ./tf.json "
@@ -58,7 +58,7 @@ spec:
 
         stage('terraform init') {
             steps {
-                dir('./stage/web-services/mig-cms') {
+                dir('./prod/web-services/mig-cms') {
                     sh "terraform init -no-color"
                 }
             }
@@ -66,7 +66,7 @@ spec:
 
         stage('terraform plan') {
             steps {
-                dir('./stage/web-services/mig-cms') {
+                dir('./prod/web-services/mig-cms') {
                     sh "terraform plan -no-color"
                 }
             }
@@ -85,7 +85,7 @@ spec:
                 expression { true }
             }
             steps {
-                dir('./stage/web-services/mig-cms') {
+                dir('./prod/web-services/mig-cms') {
                     sh 'terraform apply -auto-approve -no-color'
                 }
             }
