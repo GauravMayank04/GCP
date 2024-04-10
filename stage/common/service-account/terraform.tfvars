@@ -36,6 +36,14 @@ service_accounts_list = [
     project_roles = ["prj-stg-svc-forbesca=>roles/logging.logWriter", "prj-stg-svc-forbesca=>roles/monitoring.metricWriter"]
   },
 
+ {
+    project_id    = "prj-stg-svc-forbesca"
+    prefix        = ""
+    display_name  = "sa-bucket-access-stg" 
+    names         = ["sa-bucket-access-stg"]
+    project_roles = ["prj-stg-svc-forbesca=>roles/logging.logWriter", "prj-stg-svc-forbesca=>roles/monitoring.metricWriter"]
+  },
+
 ]
 
 
