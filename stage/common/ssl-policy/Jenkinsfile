@@ -20,7 +20,7 @@ spec:
       privileged: true
       runAsGroup: 0
       runAsUser: 0
-  serviceAccountName: "jenkins-sa"
+  serviceAccountName: "ksa-cnt-cicd-forbes-stg-infra"
 '''
             defaultContainer 'jenkins-slave'
         }
