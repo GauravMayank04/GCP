@@ -18,10 +18,9 @@ list_of_vms = [
     },
   can_ip_forward = false,
   deletion_protection = true
-  block-project-ssh-keys = "true"
   metadata = {
     enable-oslogin = true
-  
+    block-project-ssh-keys = "true"
   }
    
     network_interface = [
@@ -55,7 +54,7 @@ list_of_vms = [
     instance_name = "gce-prod-forbes-as1-solr-02",
     machine_type  = "n2-standard-2",
     auto_delete   = "true"
-    tags          = ["ssh-iap","solar-onprem","ssh-onprem"],
+    tags          = ["ssh-iap","solar-onprem","ssh-onprem","solar-8080"],
     encryption    = []
     labels = {
       "billing" : "forbes"
@@ -64,9 +63,9 @@ list_of_vms = [
     },
   can_ip_forward = false,
   deletion_protection = true
-  block-project-ssh-keys = "true"
   metadata = {
     enable-oslogin = true
+    block-project-ssh-keys = "true"
   
   }
    
@@ -101,7 +100,7 @@ list_of_vms = [
     instance_name = "gce-prod-forbes-as1-solr-03",
     machine_type  = "n2-standard-2",
     auto_delete   = "true"
-    tags          = ["ssh-iap","solar-onprem","ssh-onprem"],
+    tags          = ["ssh-iap","solar-onprem","ssh-onprem","solar-8080"],
     encryption    = []
     labels = {
       "billing" : "forbes"
@@ -110,9 +109,9 @@ list_of_vms = [
     },
   can_ip_forward = false,
   deletion_protection = true
-  block-project-ssh-keys = "true"
   metadata = {
     enable-oslogin = true
+    block-project-ssh-keys = "true"
   
   }
    

@@ -5,7 +5,7 @@
 list_of_instance_template = [
   {
     region      = "asia-south1"
-    name_prefix = "gce-it-stg-frontend-as1"
+    name_prefix = "gce-it-prod-frontend-as1"
     # template_name        = "gce-mig-it-stg-as1"
     # name = "template"
     # target_size          = "1"
@@ -15,7 +15,7 @@ list_of_instance_template = [
     subnetwork_project  = "prj-prod-host-forbes89"                                                                   //host project"    //host project
     additional_networks = []
     machine_type        = "n2-standard-4"
-    source_image        = "projects/prj-trusted-images36/global/images/prod-gce-forbes-prod-as1-frontend-cx0q-image" //should be changed to trusted image - only source image is fine
+    source_image        = "projects/prj-trusted-images36/global/images/gce-forbes-prod-as1-frontend-drzj-image" //should be changed to trusted image - only source image is fine
     source_image_project = "prj-trusted-images36"
     disk_size_gb         = "1200"
     tags                 = ["ssh-iap", "ssh-azure", "ssh-onprem", "http-onprem", "http-azure", "ssh" ,"allow-hc"]

@@ -211,7 +211,86 @@ firewall_rules_list = {
           ports    = ["8080"]
         }]
     }]
-  }
+  },
+
+fw-prod-i-a-cms-mig-gcp-solar= {
+    
+    network_name    = "projects/prj-prod-host-forbes89/global/networks/vpc-prod-shared-host-forbes" 
+    host_project_id = "prj-prod-host-forbes89"
+    rules = [
+      {
+        name                    = "fw-prod-i-a-cms-mig-gcp-solar"
+        priority                = 1000
+        description             = "allow solar access from cms mig to gcp vm - terraform"
+        direction               = "INGRESS"
+        ranges                  = []
+        source_tags             = null
+        source_service_accounts = ["sa-gce-forbes-cms-as1@prj-prod-svc-forbes89.iam.gserviceaccount.com"]
+        target_tags             = null
+        target_service_accounts = ["sa-prod-solar-gce@prj-prod-svc-forbes89.iam.gserviceaccount.com"]
+        log_config = {
+          metadata = "EXCLUDE_ALL_METADATA"
+        }
+        deny = []
+        allow = [{
+          protocol = "tcp"
+          ports    = ["8080"]
+        }]
+    }]
+  },
+
+fw-prod-i-a-frontend-mig-gcp-solar= {
+    
+    network_name    = "projects/prj-prod-host-forbes89/global/networks/vpc-prod-shared-host-forbes" 
+    host_project_id = "prj-prod-host-forbes89"
+    rules = [
+      {
+        name                    = "fw-prod-i-a-frontend-mig-gcp-solar"
+        priority                = 1000
+        description             = "allow solar access from frontend mig to gcp vm - terraform"
+        direction               = "INGRESS"
+        ranges                  = []
+        source_tags             = null
+        source_service_accounts = ["sa-gce-forbes-frontend-as1@prj-prod-svc-forbes89.iam.gserviceaccount.com"]
+        target_tags             = null
+        target_service_accounts = ["sa-prod-solar-gce@prj-prod-svc-forbes89.iam.gserviceaccount.com"]
+        log_config = {
+          metadata = "EXCLUDE_ALL_METADATA"
+        }
+        deny = []
+        allow = [{
+          protocol = "tcp"
+          ports    = ["8080"]
+        }]
+    }]
+  },
+
+fw-prod-i-a-gcp-solar-slave= {
+    
+    network_name    = "projects/prj-prod-host-forbes89/global/networks/vpc-prod-shared-host-forbes" 
+    host_project_id = "prj-prod-host-forbes89"
+    rules = [
+      {
+        name                    = "fw-prod-i-a-gcp-solar-slave"
+        priority                = 1000
+        description             = "allow solar access from solar to gcp vm - terraform"
+        direction               = "INGRESS"
+        ranges                  = []
+        source_tags             = null
+        source_service_accounts = ["sa-prod-solar-gce@prj-prod-svc-forbes89.iam.gserviceaccount.com"]
+        target_tags             = null
+        target_service_accounts = ["sa-prod-solar-gce@prj-prod-svc-forbes89.iam.gserviceaccount.com"]
+        log_config = {
+          metadata = "EXCLUDE_ALL_METADATA"
+        }
+        deny = []
+        allow = [{
+          protocol = "tcp"
+          ports    = ["8080"]
+        }]
+    }]
+  }        
+
 
 }
 

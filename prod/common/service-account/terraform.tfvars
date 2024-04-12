@@ -28,54 +28,7 @@ service_accounts_list = [
 
 
 
-
-
- /* {
-    project_id    = "prj-prod--svc-firstpostbd"
-    prefix        = ""
-    display_name  = "sa-gce-firstpost-eng-as1-nodejs-be" 
-    names         = ["sa-gce-fpost-eng-nodejs-be"]
-    project_roles = ["prj-prod--svc-firstpostbd=>roles/logging.logWriter", "prj-prod--svc-firstpostbd=>roles/monitoring.metricWriter"]
-  }
-{
-    project_id    = "prj-prod--svc-firstpostbd"
-    prefix        = ""
-    display_name  = "sa-gce-firstpost-eng-as1-cms" 
-    names         = ["sa-gce-firstpost-eng-as1-cms"]
-    project_roles = ["prj-prod--svc-firstpostbd=>roles/logging.logWriter", "prj-prod--svc-firstpostbd=>roles/monitoring.metricWriter"]
-  },
-{
-    project_id    = "prj-prod--svc-firstpostbd"
-    prefix        = ""
-    display_name  = "sa-gce-firstpost-eng-etl-queue" 
-    names         = ["sa-gce-firstpost-eng-etl-queue"]
-    project_roles = ["prj-prod--svc-firstpostbd=>roles/logging.logWriter", "prj-prod--svc-firstpostbd=>roles/monitoring.metricWriter"]
-  },
-
-
-  {
-    project_id    = "prj-prod--svc-firstpostbd"
-    prefix        = ""
-    display_name  = "sa-gce-fpost-gcs-prod" 
-    names         = ["sa-gce-fpost-gcs-prod"]
-    project_roles = ["prj-prod--svc-firstpostbd=>roles/logging.logWriter", "prj-prod--svc-firstpostbd=>roles/monitoring.metricWriter", "prj-prod--svc-firstpostbd=>roles/storage.objectAdmin","prj-prod--svc-firstpostbd=>roles/storage.objectCreator",
-    "prj-prod--svc-firstpostbd=>roles/storagetransfer.admin","prj-prod--svc-firstpostbd=>roles/monitoring.metricWriter", "prj-prod--svc-firstpostbd=>roles/storage.objectAdmin","prj-prod--svc-firstpostbd=>roles/storage.objectCreator",
-    "prj-prod--svc-firstpostbd=>roles/storagetransfer.transferAgent","prj-prod--svc-firstpostbd=>roles/storagetransfer.viewer","prj-prod--svc-firstpostbd=>roles/storagetransfer.serviceAgent","prj-prod--svc-firstpostbd=>roles/storagetransfer.user"]
-  },
-  {
-    project_id    = "prj-prod--svc-firstpostbd"
-    prefix        = ""
-    display_name  = "sa-gce-jumphost-firstpost-prod" 
-    names         = ["sa-gce-jumphost-firstpost-prod"]
-    project_roles = ["prj-prod--svc-firstpostbd=>roles/logging.logWriter", "prj-prod--svc-firstpostbd=>roles/monitoring.metricWriter"]
-  },
-    {
-    project_id    = "prj-prod--svc-firstpostbd"
-    prefix        = ""
-    display_name  = "sa-prod-jenkins-app" 
-    names         = ["sa-prod-jenkins-app"]
-    project_roles = ["prj-prod--svc-firstpostbd=>roles/logging.logWriter", "prj-prod--svc-firstpostbd=>roles/monitoring.metricWriter"]
-  },*/
+ 
   {
     project_id    = "prj-prod-svc-forbes89"
     prefix        = ""
@@ -83,6 +36,17 @@ service_accounts_list = [
     names         = ["sa-prod-solar-gce"]
     project_roles = ["prj-prod-svc-forbes89=>roles/logging.logWriter", "prj-prod-svc-forbes89=>roles/monitoring.metricWriter"]
   },
+
+ {
+    project_id    = "prj-prod-svc-forbes89"
+    prefix        = ""
+    display_name  = "sa-bucket-access-prod" 
+    names         = ["sa-bucket-access-prod"]
+    project_roles = ["prj-prod-svc-forbes89=>roles/logging.logWriter", "prj-prod-svc-forbes89=>roles/monitoring.metricWriter"]
+  },
+
+
+
 
 
 ]
