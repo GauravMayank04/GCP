@@ -12,6 +12,7 @@ list_of_buckets = [
     labels = {
       "billing" : "forbes"
       "environment" : "stage"
+     # "description": "terraform-completely-manages-this-resource"
       # "functional-name" : "english"
     }
     versioning = {

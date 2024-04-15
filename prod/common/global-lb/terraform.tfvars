@@ -25,7 +25,7 @@ list_of_glb = [
 
       cms-fe = {
         backend_name                    = "bk-forbes-prod-cms-fe"
-        description                     = null
+        description                     =  "terraform-completely-manages-this-resource"
         port                            = "80"
         protocol                        = "HTTP"
         port_name                       = "http"
@@ -116,7 +116,7 @@ list_of_glb = [
 
       nodejs-fe = {
         backend_name                    = "bk-forbes-prod-nodejs-fe"
-        description                     = null
+        description                     =  "terraform-completely-manages-this-resource"
         port                            = "80"
         protocol                        = "HTTP"
         port_name                       = "http"

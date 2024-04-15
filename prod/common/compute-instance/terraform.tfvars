@@ -15,6 +15,7 @@ list_of_vms = [
       "billing" : "forbes"
       "environment" : "prod"
       "functional-name" : "solar"
+      "description": "terraform-completely-manages-this-resource"
     },
   can_ip_forward = false,
   deletion_protection = true
@@ -32,7 +33,7 @@ list_of_vms = [
         nic_access_config      = []
       }
     ]
-    source_image= "projects/prj-trusted-images36/global/images/prod-stg-forbes-as1-solr-01-image" // should be changed to trusted image - only source image is fine
+    source_image= "projects/prj-trusted-images36/global/images/gce-stg-forbes-as1-solr-03-image" // should be changed to trusted image - only source image is fine
     # source_image         = "ubuntu-2204-jammy-v20230302"
     # source_image_family  = "ubuntu-2204-lts"
    # source_image_project = "prj-trusted-usr-access36" //prj-trusted-images36
@@ -60,6 +61,7 @@ list_of_vms = [
       "billing" : "forbes"
       "environment" : "prod"
       "functional-name" : "solar"
+      "description": "terraform-completely-manages-this-resource"
     },
   can_ip_forward = false,
   deletion_protection = true
@@ -78,7 +80,7 @@ list_of_vms = [
         nic_access_config      = []
       }
     ]
-    source_image= "projects/prj-trusted-images36/global/images/prod-stg-forbes-as1-solr-01-image" // should be changed to trusted image - only source image is fine
+    source_image= "projects/prj-trusted-images36/global/images/gce-stg-forbes-as1-solr-03-image" // should be changed to trusted image - only source image is fine
     # source_image         = "ubuntu-2204-jammy-v20230302"
     # source_image_family  = "ubuntu-2204-lts"
    # source_image_project = "prj-trusted-usr-access36" //prj-trusted-images36
@@ -106,6 +108,7 @@ list_of_vms = [
       "billing" : "forbes"
       "environment" : "prod"
       "functional-name" : "solar"
+      "description": "terraform-completely-manages-this-resource"
     },
   can_ip_forward = false,
   deletion_protection = true
@@ -124,7 +127,7 @@ list_of_vms = [
         nic_access_config      = []
       }
     ]
-    source_image= "projects/prj-trusted-images36/global/images/prod-stg-forbes-as1-solr-01-image" // should be changed to trusted image - only source image is fine
+    source_image= "projects/prj-trusted-images36/global/images/gce-stg-forbes-as1-solr-03-image" // should be changed to trusted image - only source image is fine
     # source_image         = "ubuntu-2204-jammy-v20230302"
     # source_image_family  = "ubuntu-2204-lts"
    # source_image_project = "prj-trusted-usr-access36" //prj-trusted-images36

@@ -13,7 +13,7 @@ list_of_instance_template = [
     subnetwork_project  = "prj-stg-host-forbesca"                                                                   //host project"    //host project
     additional_networks = []
     machine_type        = "n2-standard-4"
-    source_image        = "projects/prj-trusted-images36/global/images/stg-forbes-as1-cms-hfvd-image" //should be changed to trusted image - only source image is fine
+    source_image        = "projects/prj-trusted-images36/global/images/stg-forbes-as1-cms-n4q8-image" //should be changed to trusted image - only source image is fine
     source_image_project = "prj-trusted-images36"
     disk_size_gb         = "1200"
     tags                 = ["ssh-iap", "ssh-onprem", "http-onprem","allow-hc", "ssh-app"]
@@ -21,6 +21,7 @@ list_of_instance_template = [
       "billing" : "news18-forbes"
       "environment" : "stage"
       "functional-name" : "stg-mig-cms"
+      "description": "terraform-completely-manages-this-resource"
     }
 
     can_ip_forward = false

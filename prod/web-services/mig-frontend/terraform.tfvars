@@ -15,7 +15,7 @@ list_of_instance_template = [
     subnetwork_project  = "prj-prod-host-forbes89"                                                                   //host project"    //host project
     additional_networks = []
     machine_type        = "n2-standard-4"
-    source_image        = "projects/prj-trusted-images36/global/images/gce-forbes-prod-as1-frontend-drzj-image" //should be changed to trusted image - only source image is fine
+    source_image        = "projects/prj-trusted-images36/global/images/prod-gce-forbes-prod-as1-frontend-1gdr-image-1" //should be changed to trusted image - only source image is fine
     source_image_project = "prj-trusted-images36"
     disk_size_gb         = "1200"
     tags                 = ["ssh-iap", "ssh-azure", "ssh-onprem", "http-onprem", "http-azure", "ssh" ,"allow-hc"]
@@ -23,6 +23,7 @@ list_of_instance_template = [
       "billing" : "forbes"
       "environment" : "prod"
       "functional-name" : "frontend"
+      "description": "terraform-completely-manages-this-resource"
     }
     
     can_ip_forward = false
