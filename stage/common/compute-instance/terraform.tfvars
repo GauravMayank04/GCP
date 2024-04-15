@@ -10,9 +10,10 @@ list_of_vms = [
       "billing" : "news18"
       "environment" : "stg"
       "functional-name" : "stg-jumphost"
+      "description": "terraform-completely-manages-this-resource"
     },
     can_ip_forward      = false,
-    deletion_protection = true
+    deletion_protection = true,
     metadata = {
       enable-oslogin = "true"
     }
@@ -44,9 +45,10 @@ list_of_vms = [
       "billing" : "news18-forbes"
       "environment" : "stg"
       "functional-name" : "stg-forbes-solr"
+      "description": "terraform-completely-manages-this-resource"
     },
     can_ip_forward      = false,
-    deletion_protection = true
+    deletion_protection = true,
     metadata = {
       enable-oslogin = "true"
       block-project-ssh-keys = "true"
@@ -59,7 +61,7 @@ list_of_vms = [
         nic_access_config      = []
       }
     ]
-    source_image = "projects/prj-trusted-images36/global/images/production-news18-ubuntu-baseimage-vm"
+    source_image = "projects/prj-trusted-images36/global/images/gce-stg-forbes-as1-solr-03-image"
     source_image_project = "prj-trusted-images36"
     boot_disk_type       = "pd-standard",
     disk_labels          = []
@@ -79,9 +81,10 @@ list_of_vms = [
       "billing" : "news18-forbes"
       "environment" : "stg"
       "functional-name" : "stg-forbes-solr"
+      "description": "terraform-completely-manages-this-resource"
     },
     can_ip_forward      = false,
-    deletion_protection = true
+    deletion_protection = true,
     metadata = {
       enable-oslogin = "true"
       block-project-ssh-keys = "true"
@@ -94,7 +97,7 @@ list_of_vms = [
         nic_access_config      = []
       }
     ]
-    source_image = "projects/prj-trusted-images36/global/images/production-news18-ubuntu-baseimage-vm"
+    source_image = "projects/prj-trusted-images36/global/images/gce-stg-forbes-as1-solr-03-image"
     source_image_project = "prj-trusted-images36"
     boot_disk_type       = "pd-standard",
     disk_labels          = []
@@ -114,9 +117,10 @@ list_of_vms = [
       "billing" : "news18-forbes"
       "environment" : "stg"
       "functional-name" : "stg-forbes-solr"
+      "description": "terraform-completely-manages-this-resource"
     },
     can_ip_forward      = false,
-    deletion_protection = true
+    deletion_protection = true,
     metadata = {
       enable-oslogin = "true"
       block-project-ssh-keys = "true"
@@ -129,7 +133,7 @@ list_of_vms = [
         nic_access_config      = []
       }
     ]
-    source_image = "projects/prj-trusted-images36/global/images/production-news18-ubuntu-baseimage-vm"
+    source_image = "projects/prj-trusted-images36/global/images/gce-stg-forbes-as1-solr-03-image"
     source_image_project = "prj-trusted-images36"
     boot_disk_type       = "pd-standard",
     disk_labels          = []
