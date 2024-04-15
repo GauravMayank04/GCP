@@ -42,7 +42,6 @@ spec:
                 }
             }
         }
-
         stage('terraform checkov') {
             steps {
                 dir('./stage/common/cloud-armor') {
