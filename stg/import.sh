@@ -1,0 +1,21 @@
+#!/bin/bash
+
+export REDISCLOUD_SECRET_KEY="S3ism7puelmvflh8sx4j5001ym9open3050wn88q2strzgiugnv"
+export REDISCLOUD_ACCESS_KEY="A29gl69dsnaig9mu6k8yyxkib8klrd49axzqaonpeyv4dbx014h"
+
+terraform import rediscloud_subscription.non-prod-subscription 2416992
+terraform import rediscloud_subscription_database.stg-firstpost 2416992/12520532
+terraform import rediscloud_subscription_database.stg-cnbctv18-api 2416992/12520635
+terraform import rediscloud_subscription_database.stg-news18-hin-api 2416992/12523685
+terraform import rediscloud_subscription_database.stg-news18-eng-api 2416992/12523690
+terraform import rediscloud_subscription_database.stg-news18-regional-api 2416992/12523697
+terraform import rediscloud_subscription_database.stg-microsite-cms 2416992/12526701
+terraform import rediscloud_subscription_database.stg-storyboard18 2416992/12526704
+terraform import rediscloud_subscription_database.stg-forbes 2416992/12526853
+terraform import rediscloud_subscription_database.stg-overdrive 2416992/12526939
+terraform import rediscloud_subscription_database.dev-cdp 2416992/12529510
+terraform import rediscloud_subscription_database.stg-pubsync 2416992/12529818
+terraform import rediscloud_subscription_database.stg-election-v3 2416992/12529856
+terraform import rediscloud_subscription_database.stg-topper 2416992/12529892
+terraform import rediscloud_subscription_database.stg-file18 2416992/12541593
+terraform import rediscloud_subscription_database.stg-ops18 2416992/12541595
