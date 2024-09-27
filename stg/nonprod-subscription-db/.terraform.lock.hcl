@@ -3,7 +3,7 @@
 
 provider "registry.terraform.io/redislabs/rediscloud" {
   version     = "1.8.1"
-  constraints = "~> 1.0"
+  constraints = "1.8.1"
   hashes = [
     "h1:E7XD0ZfMqJYzOgSLoTXGAW2NhRdAiWMxSPe+1fRyHTY=",
     "zh:0852fcb141f4d24ecbebe9fdf9182a78f38c263ae0c849fc3819fb7b71b363e4",
